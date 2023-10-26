@@ -1,0 +1,791 @@
+Zilog eZ80 Macro Assembler Version 4.3 (19073001) RELISTED25-Oct-23     18:17:57     page:   1
+
+
+PC     Object              I  Line    Source 
+                           A     1    ; Zilog eZ80 ANSI C Compiler Release 3.4
+                           A     2    ; -nomodsect -optsize -noreduceopt -nopadbranch
+                           A     3    ; -peephole -globalopt -localcse -const=ROM 
+                           A     4    	FILE	"..\main.c"
+                           A     5    	.assume ADL=1
+                           A     6    .DEBUG "C"
+                           A     7    	SEGMENT CODE
+                           A     8    .BEGREC "NONAME0",558
+                           A     9    .DEFINE "fs_type"
+                           A    10    .VALUE 0
+                           A    11    .CLASS 8
+                           A    12    .TYPE 12
+                           A    13    .ENDEF
+                           A    14    .DEFINE "pdrv"
+                           A    15    .VALUE 1
+                           A    16    .CLASS 8
+                           A    17    .TYPE 12
+                           A    18    .ENDEF
+                           A    19    .DEFINE "n_fats"
+                           A    20    .VALUE 2
+                           A    21    .CLASS 8
+                           A    22    .TYPE 12
+                           A    23    .ENDEF
+                           A    24    .DEFINE "wflag"
+                           A    25    .VALUE 3
+                           A    26    .CLASS 8
+                           A    27    .TYPE 12
+                           A    28    .ENDEF
+                           A    29    .DEFINE "fsi_flag"
+                           A    30    .VALUE 4
+                           A    31    .CLASS 8
+                           A    32    .TYPE 12
+                           A    33    .ENDEF
+                           A    34    .DEFINE "id"
+                           A    35    .VALUE 5
+                           A    36    .CLASS 8
+                           A    37    .TYPE 13
+                           A    38    .ENDEF
+                           A    39    .DEFINE "n_rootdir"
+                           A    40    .VALUE 7
+                           A    41    .CLASS 8
+                           A    42    .TYPE 13
+                           A    43    .ENDEF
+                           A    44    .DEFINE "csize"
+                           A    45    .VALUE 9
+                           A    46    .CLASS 8
+                           A    47    .TYPE 13
+                           A    48    .ENDEF
+                           A    49    .DEFINE "lfnbuf"
+                           A    50    .VALUE 11
+                           A    51    .CLASS 8
+                           A    52    .TYPE 45
+                           A    53    .ENDEF
+                           A    54    .DEFINE "cdir"
+                           A    55    .VALUE 14
+                           A    56    .CLASS 8
+                           A    57    .TYPE 15
+                           A    58    .ENDEF
+                           A    59    .DEFINE "n_fatent"
+                           A    60    .VALUE 18
+                           A    61    .CLASS 8
+                           A    62    .TYPE 15
+                           A    63    .ENDEF
+                           A    64    .DEFINE "fsize"
+                           A    65    .VALUE 22
+                           A    66    .CLASS 8
+                           A    67    .TYPE 15
+                           A    68    .ENDEF
+                           A    69    .DEFINE "volbase"
+                           A    70    .VALUE 26
+                           A    71    .CLASS 8
+                           A    72    .TYPE 15
+                           A    73    .ENDEF
+                           A    74    .DEFINE "fatbase"
+                           A    75    .VALUE 30
+                           A    76    .CLASS 8
+                           A    77    .TYPE 15
+                           A    78    .ENDEF
+                           A    79    .DEFINE "dirbase"
+                           A    80    .VALUE 34
+                           A    81    .CLASS 8
+                           A    82    .TYPE 15
+                           A    83    .ENDEF
+                           A    84    .DEFINE "database"
+                           A    85    .VALUE 38
+                           A    86    .CLASS 8
+                           A    87    .TYPE 15
+                           A    88    .ENDEF
+                           A    89    .DEFINE "winsect"
+                           A    90    .VALUE 42
+                           A    91    .CLASS 8
+                           A    92    .TYPE 15
+                           A    93    .ENDEF
+                           A    94    .DEFINE "win"
+                           A    95    .VALUE 46
+                           A    96    .CLASS 8
+                           A    97    .DIM 512
+                           A    98    .TYPE 108
+                           A    99    .ENDEF
+                           A   100    .ENDREC "NONAME0"
+                           A   101    .BEGREC "NONAME1",15
+                           A   102    .DEFINE "fs"
+                           A   103    .VALUE 0
+                           A   104    .CLASS 8
+                           A   105    .TAG "NONAME0"
+                           A   106    .TYPE 40
+                           A   107    .ENDEF
+                           A   108    .DEFINE "id"
+                           A   109    .VALUE 3
+                           A   110    .CLASS 8
+                           A   111    .TYPE 13
+                           A   112    .ENDEF
+                           A   113    .DEFINE "attr"
+                           A   114    .VALUE 5
+                           A   115    .CLASS 8
+                           A   116    .TYPE 12
+                           A   117    .ENDEF
+                           A   118    .DEFINE "stat"
+                           A   119    .VALUE 6
+                           A   120    .CLASS 8
+                           A   121    .TYPE 12
+                           A   122    .ENDEF
+                           A   123    .DEFINE "sclust"
+                           A   124    .VALUE 7
+                           A   125    .CLASS 8
+                           A   126    .TYPE 15
+                           A   127    .ENDEF
+                           A   128    .DEFINE "objsize"
+                           A   129    .VALUE 11
+                           A   130    .CLASS 8
+                           A   131    .TYPE 15
+                           A   132    .ENDEF
+                           A   133    .ENDREC "NONAME1"
+                           A   134    .BEGREC "NONAME2",541
+                           A   135    .DEFINE "obj"
+                           A   136    .VALUE 0
+                           A   137    .CLASS 8
+                           A   138    .TAG "NONAME1"
+                           A   139    .TYPE 8
+                           A   140    .ENDEF
+                           A   141    .DEFINE "flag"
+                           A   142    .VALUE 15
+                           A   143    .CLASS 8
+                           A   144    .TYPE 12
+                           A   145    .ENDEF
+                           A   146    .DEFINE "err"
+                           A   147    .VALUE 16
+                           A   148    .CLASS 8
+                           A   149    .TYPE 12
+                           A   150    .ENDEF
+                           A   151    .DEFINE "fptr"
+                           A   152    .VALUE 17
+                           A   153    .CLASS 8
+                           A   154    .TYPE 15
+                           A   155    .ENDEF
+                           A   156    .DEFINE "clust"
+                           A   157    .VALUE 21
+                           A   158    .CLASS 8
+                           A   159    .TYPE 15
+                           A   160    .ENDEF
+                           A   161    .DEFINE "sect"
+                           A   162    .VALUE 25
+                           A   163    .CLASS 8
+                           A   164    .TYPE 15
+                           A   165    .ENDEF
+                           A   166    .DEFINE "buf"
+                           A   167    .VALUE 29
+                           A   168    .CLASS 8
+                           A   169    .DIM 512
+                           A   170    .TYPE 108
+                           A   171    .ENDEF
+                           A   172    .ENDREC "NONAME2"
+                           A   173    .BEGREC "NONAME3",46
+                           A   174    .DEFINE "obj"
+                           A   175    .VALUE 0
+                           A   176    .CLASS 8
+                           A   177    .TAG "NONAME1"
+                           A   178    .TYPE 8
+                           A   179    .ENDEF
+                           A   180    .DEFINE "dptr"
+                           A   181    .VALUE 15
+                           A   182    .CLASS 8
+                           A   183    .TYPE 15
+                           A   184    .ENDEF
+                           A   185    .DEFINE "clust"
+                           A   186    .VALUE 19
+                           A   187    .CLASS 8
+                           A   188    .TYPE 15
+                           A   189    .ENDEF
+                           A   190    .DEFINE "sect"
+                           A   191    .VALUE 23
+                           A   192    .CLASS 8
+                           A   193    .TYPE 15
+                           A   194    .ENDEF
+                           A   195    .DEFINE "dir"
+                           A   196    .VALUE 27
+                           A   197    .CLASS 8
+                           A   198    .TYPE 44
+                           A   199    .ENDEF
+                           A   200    .DEFINE "fn"
+                           A   201    .VALUE 30
+                           A   202    .CLASS 8
+                           A   203    .DIM 12
+                           A   204    .TYPE 108
+                           A   205    .ENDEF
+                           A   206    .DEFINE "blk_ofs"
+                           A   207    .VALUE 42
+                           A   208    .CLASS 8
+                           A   209    .TYPE 15
+                           A   210    .ENDEF
+                           A   211    .ENDREC "NONAME3"
+                           A   212    .BEGREC "NONAME4",278
+                           A   213    .DEFINE "fsize"
+                           A   214    .VALUE 0
+                           A   215    .CLASS 8
+                           A   216    .TYPE 15
+                           A   217    .ENDEF
+                           A   218    .DEFINE "fdate"
+                           A   219    .VALUE 4
+                           A   220    .CLASS 8
+                           A   221    .TYPE 13
+                           A   222    .ENDEF
+                           A   223    .DEFINE "ftime"
+                           A   224    .VALUE 6
+                           A   225    .CLASS 8
+                           A   226    .TYPE 13
+                           A   227    .ENDEF
+                           A   228    .DEFINE "fattrib"
+                           A   229    .VALUE 8
+                           A   230    .CLASS 8
+                           A   231    .TYPE 12
+                           A   232    .ENDEF
+                           A   233    .DEFINE "altname"
+                           A   234    .VALUE 9
+                           A   235    .CLASS 8
+                           A   236    .DIM 13
+                           A   237    .TYPE 98
+                           A   238    .ENDEF
+                           A   239    .DEFINE "fname"
+                           A   240    .VALUE 22
+                           A   241    .CLASS 8
+                           A   242    .DIM 256
+                           A   243    .TYPE 98
+                           A   244    .ENDEF
+                           A   245    .ENDREC "NONAME4"
+                           A   246    .BEGREC "NONAME5",12
+                           A   247    .DEFINE "fmt"
+                           A   248    .VALUE 0
+                           A   249    .CLASS 8
+                           A   250    .TYPE 12
+                           A   251    .ENDEF
+                           A   252    .DEFINE "n_fat"
+                           A   253    .VALUE 1
+                           A   254    .CLASS 8
+                           A   255    .TYPE 12
+                           A   256    .ENDEF
+                           A   257    .DEFINE "align"
+                           A   258    .VALUE 2
+                           A   259    .CLASS 8
+                           A   260    .TYPE 14
+                           A   261    .ENDEF
+                           A   262    .DEFINE "n_root"
+                           A   263    .VALUE 5
+                           A   264    .CLASS 8
+                           A   265    .TYPE 14
+                           A   266    .ENDEF
+                           A   267    .DEFINE "au_size"
+                           A   268    .VALUE 8
+                           A   269    .CLASS 8
+                           A   270    .TYPE 15
+                           A   271    .ENDEF
+                           A   272    .ENDREC "NONAME5"
+                           A   273    	SEGMENT BSS
+044B71                     A   274    _fs:
+044B71                     A   275    	DS	558
+                           A   276    .DEFINE "fs"
+                           A   277    .ALIAS "_fs"
+                           A   278    .CLASS 83
+                           A   279    .VALUE _fs
+                           A   280    .TAG "NONAME0"
+                           A   281    .TYPE 8
+                           A   282    .ENDEF
+                           A   283    ;    1	#include <ez80.h>
+                           A   284    ;    2	#include "src_fatfs\ff.h"
+                           A   285    ;    3	#include "spi.h"
+                           A   286    ;    4	#include "defines.h"
+                           A   287    ;    5	#include <stdint.h>
+                           A   288    ;    6	#include "agontimer.h"
+                           A   289    ;    7	
+                           A   290    ;    8	#define PAGESIZE	1024
+                           A   291    ;    9	#define FLASHPAGES	128
+                           A   292    ;   10	#define FLASHSTART	0x0
+                           A   293    ;   11	
+                           A   294    ;   12	#define MOSFILENAME	"MOS.bin"
+                           A   295    ;   13	#define LOADADDRESS	0x50000
+                           A   296    ;   14	
+                           A   297    ;   15	extern void enableFlashKeyRegister(void
+                           A   298    ;   16	extern void lockFlashKeyRegister(void);
+                           A   299    ;   17	extern void fastmemcpy(UINT24 destinati
+                           A   300    ;   18	extern void reset(void);
+                           A   301    ;   19	
+                           A   302    ;   20	FATFS 	fs;
+                           A   303    	SEGMENT CODE
+                           A   304    ;   21	
+                           A   305    ;   22	int main(int argc, char * argv[]) {
+040145                     A   306    _main:
+                           A   307    .DEFINE "_main"
+                           A   308    
+                           A   309    .VALUE _main
+                           A   310    
+                           A   311    .CLASS 2
+                           A   312    
+                           A   313    .TYPE 68
+                           A   314    
+                           A   315    .ENDEF
+                           A   316    
+                           A   317    .BEGFUNC "main",22,"_main"
+                           A   318    
+                           A   319    .LINE 22
+                           A   320    
+                           A   321    .DEFINE "argc"
+                           A   322    
+                           A   323    .CLASS 65
+                           A   324    
+                           A   325    .VALUE 6
+                           A   326    
+                           A   327    .TYPE 4
+                           A   328    
+                           A   329    .ENDEF
+                           A   330    
+                           A   331    .DEFINE "argv"
+                           A   332    
+                           A   333    .CLASS 65
+                           A   334    
+                           A   335    .VALUE 9
+                           A   336    
+                           A   337    .TYPE 290
+                           A   338    
+                           A   339    .ENDEF
+                           A   340    
+                           A   341    .DEFINE "counter"
+                           A   342    
+                           A   343    .CLASS 65
+                           A   344    
+                           A   345    .VALUE -3
+                           A   346    
+                           A   347    .TYPE 14
+                           A   348    
+                           A   349    .ENDEF
+                           A   350    
+                           A   351    .DEFINE "pagemax"
+                           A   352    
+                           A   353    .CLASS 65
+                           A   354    
+                           A   355    .VALUE -6
+                           A   356    
+                           A   357    .TYPE 14
+                           A   358    
+                           A   359    .ENDEF
+                           A   360    
+                           A   361    .DEFINE "addressto"
+                           A   362    
+                           A   363    .CLASS 65
+                           A   364    
+                           A   365    .VALUE -9
+                           A   366    
+                           A   367    .TYPE 14
+                           A   368    
+                           A   369    .ENDEF
+                           A   370    
+                           A   371    .DEFINE "addressfrom"
+                           A   372    
+                           A   373    .CLASS 65
+                           A   374    
+                           A   375    .VALUE -12
+                           A   376    
+                           A   377    .TYPE 14
+                           A   378    
+                           A   379    .ENDEF
+                           A   380    
+                           A   381    .DEFINE "mossize"
+                           A   382    
+                           A   383    .CLASS 65
+                           A   384    
+                           A   385    .VALUE -15
+                           A   386    
+                           A   387    .TYPE 14
+                           A   388    
+                           A   389    .ENDEF
+                           A   390    
+                           A   391    .DEFINE "value"
+                           A   392    
+                           A   393    .CLASS 65
+                           A   394    
+                           A   395    .VALUE -16
+                           A   396    
+                           A   397    .TYPE 12
+                           A   398    
+                           A   399    .ENDEF
+                           A   400    
+                           A   401    .DEFINE "lastpagebytes"
+                           A   402    
+                           A   403    .CLASS 65
+                           A   404    
+                           A   405    .VALUE -19
+                           A   406    
+                           A   407    .TYPE 14
+                           A   408    
+                           A   409    .ENDEF
+                           A   410    
+                           A   411    .DEFINE "frmos"
+                           A   412    
+                           A   413    .CLASS 65
+                           A   414    
+                           A   415    .VALUE -22
+                           A   416    
+                           A   417    .TYPE 4
+                           A   418    
+                           A   419    .ENDEF
+                           A   420    
+                           A   421    .DEFINE "br"
+                           A   422    
+                           A   423    .CLASS 65
+                           A   424    
+                           A   425    .VALUE -28
+                           A   426    
+                           A   427    .TYPE 14
+                           A   428    
+                           A   429    .ENDEF
+                           A   430    
+                           A   431    .DEFINE "filmos"
+                           A   432    
+                           A   433    .CLASS 65
+                           A   434    
+                           A   435    .VALUE -569
+                           A   436    
+                           A   437    .TAG "NONAME2"
+                           A   438    
+                           A   439    .TYPE 8
+                           A   440    
+                           A   441    .ENDEF
+                           A   442    
+040145 DDE5                A   443    	PUSH	IX
+040147 DD210000 00         A   444    	LD	IX,0
+04014C DD39                A   445    	ADD	IX,SP
+04014E 21C7FDFF            A   446    	LD	HL,-569
+040152 39                  A   447    	ADD	HL,SP
+040153 F9                  A   448    	LD	SP,HL
+                           A   449    ;   23		FRESULT	frmos;
+                           A   450    ;   24		FIL	   	filmos;
+                           A   451    ;   25		UINT24  br;	
+                           A   452    ;   26		UINT24  mossize;
+                           A   453    ;   27		
+                           A   454    ;   28		UINT24	counter,pagemax, lastpageby
+                           A   455    ;   29		UINT24 addressto,addressfrom;
+                           A   456    ;   30		UINT8	value;
+                           A   457    ;   31	
+                           A   458    ;   32		init_spi();
+                           A   459    .LINE 32
+                           A   460    
+040154 CD 67 3E 04         A   461    	CALL	_init_spi
+                           A   462    ;   33	
+                           A   463    ;   34		f_mount(&fs, "", 1);
+                           A   464    .LINE 34
+                           A   465    
+040158 01010000            A   466    	LD	BC,1
+04015C C5                  A   467    	PUSH	BC
+04015D 01 4F 4B 04         A   468    	LD	BC,L__0
+040161 C5                  A   469    	PUSH	BC
+040162 01 71 4B 04         A   470    	LD	BC,_fs
+040166 C5                  A   471    	PUSH	BC
+040167 CD 9E 31 04         A   472    	CALL	_f_mount
+04016B C1                  A   473    	POP	BC
+04016C C1                  A   474    	POP	BC
+04016D C1                  A   475    	POP	BC
+                           A   476    ;   35	
+                           A   477    ;   36		addressto = FLASHSTART;
+                           A   478    .LINE 36
+                           A   479    
+04016E 01000000            A   480    	LD	BC,0
+040172 DD0FF7              A   481    	LD	(IX+%FFFFFFF7),BC
+                           A   482    ;   37		addressfrom = LOADADDRESS;
+                           A   483    .LINE 37
+                           A   484    
+040175 01000005            A   485    	LD	BC,327680
+040179 DD0FF4              A   486    	LD	(IX+%FFFFFFF4),BC
+                           A   487    ;   38	
+                           A   488    ;   39		frmos= f_open(&filmos, MOSFILENAME,
+                           A   489    .LINE 39
+                           A   490    
+04017C 01010000            A   491    	LD	BC,1
+040180 C5                  A   492    	PUSH	BC
+040181 01 50 4B 04         A   493    	LD	BC,L__1
+040185 C5                  A   494    	PUSH	BC
+040186 DDE5E1              A   495    	LD	HL,IX
+040189 01C7FDFF            A   496    	LD	BC,-569
+04018D 09                  A   497    	ADD	HL,BC
+04018E E5C1                A   498    	LD	BC,HL
+040190 C5                  A   499    	PUSH	BC
+040191 CD 2A 32 04         A   500    	CALL	_f_open
+040195 C1                  A   501    	POP	BC
+040196 C1                  A   502    	POP	BC
+040197 C1                  A   503    	POP	BC
+040198 DD2FEA              A   504    	LD	(IX+%FFFFFFEA),HL
+                           A   505    ;   40		if(frmos != FR_OK) while(1);
+                           A   506    .LINE 40
+                           A   507    
+04019B CD C6 44 04         A   508    	CALL	__icmpzero
+04019F 28 02               A   509    	JR	Z,L_3
+0401A1                     A   510    L_1:
+0401A1 18 FE               A   511    	JR	L_1
+0401A3                     A   512    L_3:
+                           A   513    ;   41		mossize = f_size(&filmos);
+                           A   514    .LINE 41
+                           A   515    
+0401A3 01D2FDFF            A   516    	LD	BC,-558
+0401A7 CD 74 46 04         A   517    	CALL	__ildix
+0401AB DD2FF1              A   518    	LD	(IX+%FFFFFFF1),HL
+                           A   519    ;   42	
+                           A   520    ;   43		frmos= f_read(&filmos, (void *)LOAD
+                           A   521    .LINE 43
+                           A   522    
+0401AE ED65E4              A   523    	PEA	IX+%FFFFFFE4
+0401B1 E5C1                A   524    	LD	BC,HL
+0401B3 C5                  A   525    	PUSH	BC
+0401B4 01000005            A   526    	LD	BC,327680
+0401B8 C5                  A   527    	PUSH	BC
+0401B9 DDE5E1              A   528    	LD	HL,IX
+0401BC 01C7FDFF            A   529    	LD	BC,-569
+0401C0 09                  A   530    	ADD	HL,BC
+0401C1 E5C1                A   531    	LD	BC,HL
+0401C3 C5                  A   532    	PUSH	BC
+0401C4 CD 7A 33 04         A   533    	CALL	_f_read
+0401C8 C1                  A   534    	POP	BC
+0401C9 C1                  A   535    	POP	BC
+0401CA C1                  A   536    	POP	BC
+0401CB C1                  A   537    	POP	BC
+0401CC DD2FEA              A   538    	LD	(IX+%FFFFFFEA),HL
+                           A   539    ;   44	
+                           A   540    ;   45		f_close(&filmos);
+                           A   541    .LINE 45
+                           A   542    
+0401CF DDE5E1              A   543    	LD	HL,IX
+0401D2 01C7FDFF            A   544    	LD	BC,-569
+0401D6 09                  A   545    	ADD	HL,BC
+0401D7 E5C1                A   546    	LD	BC,HL
+0401D9 C5                  A   547    	PUSH	BC
+0401DA CD E8 36 04         A   548    	CALL	_f_close
+0401DE C1                  A   549    	POP	BC
+                           A   550    ;   46	
+                           A   551    ;   47		// Unprotect and erase flash
+                           A   552    ;   48		enableFlashKeyRegister();	// unlo
+                           A   553    .LINE 48
+                           A   554    
+0401DF CD F9 00 04         A   555    	CALL	_enableFlashKeyRegister
+                           A   556    ;   49		FLASH_PROT = 0;				// disa
+                           A   557    .LINE 49
+                           A   558    
+0401E3 AF                  A   559    	XOR	A,A
+0401E4 ED39FA              A   560    	OUT0	(250),A
+                           A   561    ;   50		enableFlashKeyRegister();	// will
+                           A   562    .LINE 50
+                           A   563    
+0401E7 CD F9 00 04         A   564    	CALL	_enableFlashKeyRegister
+                           A   565    ;   51		FLASH_FDIV = 0x5F;			// Ceil
+                           A   566    .LINE 51
+                           A   567    
+0401EB 3E5F                A   568    	LD	A,%5F
+0401ED ED39F9              A   569    	OUT0	(249),A
+                           A   570    ;   52	
+                           A   571    ;   53		// Mass erase flash
+                           A   572    ;   54		FLASH_PGCTL = 0x01;	// mass erase b
+                           A   573    .LINE 54
+                           A   574    
+0401F0 3E01                A   575    	LD	A,%1
+0401F2 ED39FF              A   576    	OUT0	(255),A
+                           A   577    ;   55		do {
+0401F5                     A   578    L_4:
+                           A   579    .LINE 55
+                           A   580    
+                           A   581    ;   56			value = FLASH_PGCTL;
+                           A   582    .LINE 56
+                           A   583    
+0401F5 ED38FF              A   584    	IN0	A,(255)
+0401F8 DD77F0              A   585    	LD	(IX+%FFFFFFF0),A
+                           A   586    ;   57		} while(value & 0x01); // wait for 
+                           A   587    .LINE 57
+                           A   588    
+0401FB E601                A   589    	AND	A,%1
+0401FD 20 F6               A   590    	JR	NZ,L_4
+                           A   591    ;   58	
+                           A   592    ;   59		// determine number of pages to wri
+                           A   593    ;   60		pagemax = mossize/PAGESIZE;
+                           A   594    .LINE 60
+                           A   595    
+0401FF DD27F1              A   596    	LD	HL,(IX+%FFFFFFF1)
+040202 3E0A                A   597    	LD	A,%A
+040204 CD 3D 45 04         A   598    	CALL	__ishru_b
+040208 DD2FFA              A   599    	LD	(IX+%FFFFFFFA),HL
+                           A   600    ;   61		if(mossize%PAGESIZE) // last page h
+                           A   601    .LINE 61
+                           A   602    
+04020B 01FF0300            A   603    	LD	BC,1023
+04020F DD27F1              A   604    	LD	HL,(IX+%FFFFFFF1)
+040212 CD D5 45 04         A   605    	CALL	__iand
+040216 DD2FE7              A   606    	LD	(IX+%FFFFFFE7),HL
+040219 CD C6 44 04         A   607    	CALL	__icmpzero
+04021D 28 0F               A   608    	JR	Z,L_8
+                           A   609    ;   62		{
+                           A   610    ;   63			pagemax += 1;
+                           A   611    .LINE 63
+                           A   612    
+04021F DD07FA              A   613    	LD	BC,(IX+%FFFFFFFA)
+040222 03                  A   614    	INC	BC
+040223 DD0FFA              A   615    	LD	(IX+%FFFFFFFA),BC
+                           A   616    ;   64			lastpagebytes = mossize%PAGESIZ
+                           A   617    .LINE 64
+                           A   618    
+040226 DD07E7              A   619    	LD	BC,(IX+%FFFFFFE7)
+040229 DD0FED              A   620    	LD	(IX+%FFFFFFED),BC
+                           A   621    ;   65		}
+                           A   622    ;   66		else lastpagebytes = PAGESIZE; // n
+                           A   623    .LINE 66
+                           A   624    
+04022C 18 07               A   625    	JR	L_16
+04022E                     A   626    L_8:
+04022E 01000400            A   627    	LD	BC,1024
+040232 DD0FED              A   628    	LD	(IX+%FFFFFFED),BC
+040235                     A   629    L_16:
+                           A   630    ;   67	
+                           A   631    ;   68		// write out each page to flash
+                           A   632    ;   69		for(counter = 0; counter < pagemax;
+                           A   633    .LINE 69
+                           A   634    
+040235 01000000            A   635    	LD	BC,0
+040239 DD0FFD              A   636    	LD	(IX+%FFFFFFFD),BC
+04023C 18 50               A   637    	JR	L_15
+04023E                     A   638    L_13:
+                           A   639    ;   70		{
+                           A   640    ;   71			if(counter == (pagemax - 1)) //
+                           A   641    .LINE 71
+                           A   642    
+04023E DD31FA              A   643    	LD	IY,(IX+%FFFFFFFA)
+040241 ED23FF              A   644    	LEA	HL,IY+%FFFFFFFF
+040244 DD07FD              A   645    	LD	BC,(IX+%FFFFFFFD)
+040247 B7                  A   646    	OR	A,A
+040248 ED42                A   647    	SBC	HL,BC
+04024A 20 15               A   648    	JR	NZ,L_11
+                           A   649    ;   72				fastmemcpy(addressto,addres
+                           A   650    .LINE 72
+                           A   651    
+04024C DD07ED              A   652    	LD	BC,(IX+%FFFFFFED)
+04024F C5                  A   653    	PUSH	BC
+040250 DD07F4              A   654    	LD	BC,(IX+%FFFFFFF4)
+040253 C5                  A   655    	PUSH	BC
+040254 DD07F7              A   656    	LD	BC,(IX+%FFFFFFF7)
+040257 C5                  A   657    	PUSH	BC
+040258 CD 26 01 04         A   658    	CALL	_fastmemcpy
+04025C C1                  A   659    	POP	BC
+04025D C1                  A   660    	POP	BC
+04025E C1                  A   661    	POP	BC
+                           A   662    ;   73			else 
+                           A   663    .LINE 73
+                           A   664    
+04025F 18 14               A   665    	JR	L_12
+040261                     A   666    L_11:
+                           A   667    ;   74				fastmemcpy(addressto,addres
+                           A   668    .LINE 74
+                           A   669    
+040261 01000400            A   670    	LD	BC,1024
+040265 C5                  A   671    	PUSH	BC
+040266 DD07F4              A   672    	LD	BC,(IX+%FFFFFFF4)
+040269 C5                  A   673    	PUSH	BC
+04026A DD07F7              A   674    	LD	BC,(IX+%FFFFFFF7)
+04026D C5                  A   675    	PUSH	BC
+04026E CD 26 01 04         A   676    	CALL	_fastmemcpy
+040272 C1                  A   677    	POP	BC
+040273 C1                  A   678    	POP	BC
+040274 C1                  A   679    	POP	BC
+040275                     A   680    L_12:
+                           A   681    ;   75		
+                           A   682    ;   76			addressto += PAGESIZE;
+                           A   683    .LINE 76
+                           A   684    
+040275 01000400            A   685    	LD	BC,1024
+040279 DD27F7              A   686    	LD	HL,(IX+%FFFFFFF7)
+04027C 09                  A   687    	ADD	HL,BC
+04027D DD2FF7              A   688    	LD	(IX+%FFFFFFF7),HL
+                           A   689    ;   77			addressfrom += PAGESIZE;
+                           A   690    .LINE 77
+                           A   691    
+040280 DD27F4              A   692    	LD	HL,(IX+%FFFFFFF4)
+040283 09                  A   693    	ADD	HL,BC
+040284 DD2FF4              A   694    	LD	(IX+%FFFFFFF4),HL
+040287 DD07FD              A   695    	LD	BC,(IX+%FFFFFFFD)
+04028A 03                  A   696    	INC	BC
+04028B DD0FFD              A   697    	LD	(IX+%FFFFFFFD),BC
+                           A   698    ;   78		}
+04028E                     A   699    L_15:
+                           A   700    .LINE 78
+                           A   701    
+04028E DD07FA              A   702    	LD	BC,(IX+%FFFFFFFA)
+040291 DD27FD              A   703    	LD	HL,(IX+%FFFFFFFD)
+040294 B7                  A   704    	OR	A,A
+040295 ED42                A   705    	SBC	HL,BC
+040297 38 A5               A   706    	JR	C,L_13
+                           A   707    ;   79		lockFlashKeyRegister();	// lock the
+                           A   708    .LINE 79
+                           A   709    
+040299 CD 11 01 04         A   710    	CALL	_lockFlashKeyRegister
+                           A   711    ;   80	
+                           A   712    ;   81		reset();
+                           A   713    .LINE 81
+                           A   714    
+04029D CD 24 01 04         A   715    	CALL	_reset
+                           A   716    ;   82		return 0;
+                           A   717    .LINE 82
+                           A   718    
+0402A1 B7                  A   719    	OR	A,A
+0402A2 ED62                A   720    	SBC	HL,HL
+                           A   721    ;   83	}
+                           A   722    .LINE 83
+                           A   723    
+0402A4 DDF9                A   724    	LD	SP,IX
+0402A6 DDE1                A   725    	POP	IX
+0402A8 C9                  A   726    	RET	
+                           A   727    
+                           A   728    
+                           A   729    ;**************************** _main ***********
+                           A   730    ;Name                         Addr/Register   S
+                           A   731    ;_reset                              IMPORT  --
+                           A   732    ;_lockFlashKeyRegister               IMPORT  --
+                           A   733    ;_fastmemcpy                         IMPORT  --
+                           A   734    ;_enableFlashKeyRegister             IMPORT  --
+                           A   735    ;_f_close                            IMPORT  --
+                           A   736    ;_f_read                             IMPORT  --
+                           A   737    ;_f_open                             IMPORT  --
+                           A   738    ;_fs                                 STATIC    
+                           A   739    ;_f_mount                            IMPORT  --
+                           A   740    ;_init_spi                           IMPORT  --
+                           A   741    ;filmos                              IX-569    
+                           A   742    ;br                                   IX-28    
+                           A   743    ;G_0                                  IX-25    
+                           A   744    ;frmos                                IX-22    
+                           A   745    ;lastpagebytes                        IX-19    
+                           A   746    ;value                                IX-16    
+                           A   747    ;mossize                              IX-15    
+                           A   748    ;addressfrom                          IX-12    
+                           A   749    ;addressto                             IX-9    
+                           A   750    ;pagemax                               IX-6    
+                           A   751    ;counter                               IX-3    
+                           A   752    ;argv                                  IX+9    
+                           A   753    ;argc                                  IX+6    
+                           A   754    
+                           A   755    
+                           A   756    ; Stack Frame Size: 581 (bytes)
+                           A   757    ;       Spill Code: 0 (instruction)
+                           A   758    
+                           A   759    
+                           A   760    .ENDFUNC "main",83,"_main"
+                           A   761    	SEGMENT STRSECT
+044B4F                     A   762    L__0:
+044B4F 00                  A   763    	DB	0
+044B50                     A   764    L__1:
+044B50 4D4F532E 62696E     A   765    	DB	"MOS.bin"
+044B57 00                  A   766    	DB	0
+                           A   767    	XREF _reset:ROM
+                           A   768    	XREF _fastmemcpy:ROM
+                           A   769    	XREF _lockFlashKeyRegister:ROM
+                           A   770    	XREF _enableFlashKeyRegister:ROM
+                           A   771    	XREF _init_spi:ROM
+                           A   772    	XREF _f_mount:ROM
+                           A   773    	XREF _f_read:ROM
+                           A   774    	XREF _f_close:ROM
+                           A   775    	XREF _f_open:ROM
+                           A   776    	XREF __iand:ROM
+                           A   777    	XREF __ildix:ROM
+                           A   778    	XREF __icmpzero:ROM
+                           A   779    	XREF __ishru_b:ROM
+                           A   780    	XDEF _main
+                           A   781    	XDEF _fs
+                           A   782    	END
+
+
+Errors: 0
+Warnings: 0
+Lines Assembled: 783
